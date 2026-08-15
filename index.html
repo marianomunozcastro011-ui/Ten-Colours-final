@@ -113,11 +113,12 @@
   .velo{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(78% 66% at 50% 46%,rgba(253,248,243,.62),rgba(253,248,243,.12))}
 
   /* banco de nubes al pie del hero: le da fondo y lo funde con la franja de abajo */
-  .nubes-frente{position:absolute;left:0;right:0;bottom:54px;height:30%;z-index:1;pointer-events:none;
+  .hero-zona{position:relative;flex:1;display:flex;overflow:hidden}
+  .nubes-frente{position:absolute;left:0;right:0;bottom:0;height:34%;z-index:1;pointer-events:none;
     background:url('nubes-frente.webp') center bottom/cover no-repeat;
     animation:deriva 30s ease-in-out infinite}
   @keyframes deriva{0%,100%{transform:translateX(0) scale(1.05)}50%{transform:translateX(-2.4%) scale(1.09)}}
-  @media(max-width:600px){.nubes-frente{height:24%;bottom:44px}}
+  @media(max-width:600px){.nubes-frente{height:26%}}
   .hero{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding-bottom:56px;text-align:center}
   .hero .inner{max-width:1000px;margin:0 auto}
   .hero-eyebrow{color:#f7fbfd;text-shadow:0 1px 12px rgba(30,74,84,.35);margin-bottom:26px;overflow:hidden}
@@ -363,6 +364,7 @@
        y borra los signos de comentario de la línea de abajo.
   <div class="hero-bg"></div>
   -->
+  <div class="hero-zona">
   <div class="velo" aria-hidden="true"></div>
   <div class="nubes-frente" aria-hidden="true"></div>
   <div class="wrap hero">
@@ -377,6 +379,7 @@
         <a class="btn btn-out" data-mag href="coleccion.html"><span>Ver colección</span></a>
       </div>
     </div>
+  </div>
   </div>
   <div class="marq" aria-hidden="true">
     <div class="t"><span>Diseño</span><span>Comodidad</span><span>Calidad</span><span>Hecho en México</span><span>Para cada paso</span><span>Diseño</span><span>Comodidad</span><span>Calidad</span><span>Hecho en México</span><span>Para cada paso</span></div>
