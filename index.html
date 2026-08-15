@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ten Colours — Tenis urbanos | Hecho en México</title>
+<meta name="description" content="Ten Colours: marca mexicana de tenis urbanos, 30 años fabricando calidad. Diseño, comodidad y estilo. Mayoreo y menudeo. Envíos a toda la República." />
+<meta property="og:title" content="Ten Colours — Tenis urbanos hechos en México" />
+<meta property="og:description" content="Marca mexicana de tenis urbanos. 30 años de calidad. Cotiza mayoreo por WhatsApp." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://raw.githubusercontent.com/marianomunozcastro011-ui/Ten-colours/main/og-preview.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://raw.githubusercontent.com/marianomunozcastro011-ui/Ten-colours/main/og-preview.jpg" />
+<link rel="canonical" href="https://marianomunozcastro011-ui.github.io/Ten-colours/" />
+<meta property="og:url" content="https://marianomunozcastro011-ui.github.io/Ten-colours/" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="icon" type="image/png" sizes="256x256" href="favicon.png" />
+<link rel="apple-touch-icon" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#7fa8c2; --pine-d:#0b1a12;
+    --wine:#2f4858; --rose:#7fa8c2; --pink:#f2c4d2; --cream:#fdf8f3;
+    --paper:#fdf8f3; --card:#fffdfb;
+    --blue:#2f4858; --blue-d:#223642; --mustard:#7fa8c2; --sand:#f2c4d2; --bone:#fdf8f3;
+    --ink:#2f4858; --ink-dim:#5d7a8c;
+    --line:rgba(47,72,88,.12);
+    --wa:#25d366;
+    --display:'Unbounded',system-ui,sans-serif; --sans:'Jost',system-ui,sans-serif;
+    --maxw:1220px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:none}
+  @media(hover:none){body{cursor:auto}}
+  body.menu-open{overflow:hidden}
+  a{color:inherit;text-decoration:none}
+  h1,h2{font-family:var(--sans);font-weight:600;line-height:1.06;letter-spacing:-.022em}
+  h3{font-family:var(--sans);font-weight:500;line-height:1.2;letter-spacing:-.012em}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+  .eyebrow{font-family:var(--sans);font-weight:500;font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose)}
+
+  /* cursor */
+  .cur{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:var(--wine);z-index:200;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
+  .cur-r{position:fixed;top:0;left:0;width:38px;height:38px;border-radius:50%;border:1px solid var(--rose);z-index:199;pointer-events:none;transform:translate(-50%,-50%)}
+  .cur.big{width:52px;height:52px;background:rgba(127,168,194,.18)}
+  @media(hover:none){.cur,.cur-r{display:none}}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  .logo{font-family:var(--sans);font-weight:300;letter-spacing:.4em;text-transform:uppercase;font-size:1.02rem;display:inline-flex;align-items:baseline;gap:.12em}
+  .logo b{font-weight:500}
+  
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:80;padding:22px 0;transition:padding .4s,background .4s,box-shadow .4s}
+  nav.scrolled{background:rgba(253,248,243,.93);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:13px 0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:0 32px;gap:16px}
+  .nav-links{display:flex;gap:36px;align-items:center}
+  .nav-links a:not(.btn){font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;position:relative;opacity:.75;transition:opacity .2s;white-space:nowrap}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--pine);transition:right .3s}
+  .nav-links a:not(.btn):hover{opacity:1}
+  .nav-links a:not(.btn):hover::after{right:0}
+  .logo,.nav-links a:not(.btn){color:var(--ink);transition:color .4s}
+  nav.scrolled .logo,nav.scrolled .nav-links a:not(.btn){color:var(--ink)}
+  .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;border-radius:2px;transition:background .3s,color .3s,transform .15s;cursor:none;border:1px solid transparent;will-change:transform}
+  @media(hover:none){.btn{cursor:pointer}}
+  .btn-solid{background:var(--wine);color:var(--cream)}
+  .btn-solid:hover{background:#223642}
+  .btn-out{border-color:currentColor}
+  .btn-out:hover{background:currentColor}
+  .btn-out:hover span{color:var(--cream)}
+  .hero .btn-out:hover span{color:var(--cream)}
+  .btn-wa{background:var(--wa);color:#fff}
+
+  /* HAMBURGUESA + MENU MOVIL */
+  .burger{display:none;width:44px;height:44px;border:none;background:none;padding:0;cursor:pointer;position:relative;z-index:95;flex-shrink:0}
+  .burger i{display:block;position:absolute;left:11px;width:22px;height:1.6px;background:var(--ink);border-radius:2px;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .2s,background .3s}
+  .burger i:nth-child(1){top:16px}
+  .burger i:nth-child(2){top:22px}
+  .burger i:nth-child(3){top:28px}
+  nav.scrolled .burger i{background:var(--ink)}
+  body.menu-open .burger i{background:var(--cream)}
+  body.menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  body.menu-open .burger i:nth-child(2){opacity:0}
+  body.menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .mmenu{position:fixed;inset:0;z-index:90;background:radial-gradient(125% 100% at 22% 8%,#4d7690,#2f4858 52%,#223642);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;padding:0 30px;opacity:0;visibility:hidden;transform:translateY(-14px);transition:opacity .35s,transform .35s,visibility .35s}
+  body.menu-open .mmenu{opacity:1;visibility:visible;transform:none}
+  .mmenu a:not(.btn){font-family:var(--sans);font-weight:600;letter-spacing:-.02em;font-size:2.1rem;color:var(--cream);padding:9px 0;letter-spacing:-.01em;opacity:0;transform:translateY(14px);transition:opacity .4s,transform .4s}
+  body.menu-open .mmenu a:not(.btn){opacity:1;transform:none}
+  body.menu-open .mmenu a:nth-child(1){transition-delay:.08s}
+  body.menu-open .mmenu a:nth-child(2){transition-delay:.14s}
+  body.menu-open .mmenu a:nth-child(3){transition-delay:.20s}
+  body.menu-open .mmenu a:nth-child(4){transition-delay:.26s}
+  .mmenu .btn{margin-top:26px;padding:16px 30px;font-size:.82rem;opacity:0;transform:translateY(14px);transition:opacity .4s .32s,transform .4s .32s}
+  body.menu-open .mmenu .btn{opacity:1;transform:none}
+  .mmenu .mcontact{position:absolute;bottom:44px;left:30px;font-size:.85rem;color:rgba(253,248,243,.55);line-height:1.8}
+  .mmenu .mcontact b{color:var(--pink);font-weight:400}
+
+  /* HERO */
+  /* HERO — solo tipografía; el gráfico son las diez franjas de color */
+  header{position:relative;background:url('hero-nubes.webp') center 62%/cover no-repeat,linear-gradient(170deg,#7cbee0,#f4b6c8);color:var(--ink);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:100svh;padding-top:132px}
+  /* ===== FOTO DE FONDO (opcional) =====
+     Cuando el cliente mande una foto de alguien usando los tenis, súbela
+     como "hero-fondo.jpg" y descomenta la línea marcada dentro del header.
+     El velo de encima garantiza que el título se siga leyendo. */
+  .hero-bg{position:absolute;inset:0;z-index:0;background:url('hero-fondo.jpg') center/cover no-repeat}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(95deg,rgba(38,4,15,.94) 0%,rgba(38,4,15,.78) 48%,rgba(38,4,15,.42) 100%)}
+  /* velo que concentra oscuridad al centro para que el texto siempre gane */
+  .velo{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(78% 66% at 50% 46%,rgba(253,248,243,.62),rgba(253,248,243,.12))}
+
+  .hero{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding-bottom:56px;text-align:center}
+  .hero .inner{max-width:1000px;margin:0 auto}
+  .hero-eyebrow{color:var(--ink);margin-bottom:26px;overflow:hidden}
+  .hero-eyebrow span{display:inline-block;transform:translateY(110%);animation:up .8s .1s cubic-bezier(.2,.8,.2,1) forwards}
+  /* Unbounded solo para los golpes: el título del hero y los números. */
+  h1.hero-title{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,10.5vw,8.4rem);line-height:1.05;letter-spacing:-.055em;color:var(--ink)}
+  .hero .cycle{font-style:normal;font-weight:inherit}
+  h1.hero-title .l{overflow:hidden;display:block}
+  h1.hero-title .l>span{display:block;transform:translateY(110%)}
+  h1.hero-title .l1>span{animation:up .9s .22s cubic-bezier(.2,.8,.2,1) forwards}
+  h1.hero-title .l2>span{animation:up .9s .34s cubic-bezier(.2,.8,.2,1) forwards, hue 6s linear infinite}
+  h1.hero-title .l3>span{animation:up .9s .46s cubic-bezier(.2,.8,.2,1) forwards, hue 6s linear infinite}
+  .cycle{font-style:normal}
+  @keyframes hue{0%,100%{color:#ffffff}33%{color:#fdf8f3}66%{color:#ffeef3}}
+  @keyframes up{to{transform:translateY(0)}}
+  .hero p.lead{font-size:1.16rem;color:#456777;max-width:52ch;margin:30px auto 34px;opacity:0;animation:fade 1s .6s forwards}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fade 1s .74s forwards}
+  @keyframes fade{to{opacity:1}}
+
+  /* franja de palabras: separa el hero del catálogo */
+  .marq{position:relative;background:#223642;overflow:hidden;white-space:nowrap;display:flex}
+  .marq .t{display:flex;flex-shrink:0;animation:scrollx 30s linear infinite}
+  .marq span{font-family:var(--sans);font-weight:400;text-transform:uppercase;letter-spacing:.14em;font-size:1.05rem;color:var(--sand);padding:15px 32px;opacity:.85}
+  .marq span::after{content:"✳";margin-left:32px;color:var(--mustard);font-size:.7em;font-style:normal}
+  @keyframes scrollx{to{transform:translateX(-50%)}}
+
+  /* SECTIONS */
+  section{padding:120px 0;position:relative}
+  .sec-eyebrow{margin-bottom:16px;display:block}
+  h2.sec-title{font-size:clamp(2.3rem,4.8vw,3.6rem)}
+
+  /* NOSOTROS — en vino, para alternar con el catálogo (blanco) que va antes */
+  #nosotros{background:radial-gradient(rgba(242,196,210,.06) 1.1px,transparent 1.1px) 0 0/24px 24px,radial-gradient(120% 130% at 80% 8%,#4d7690,#2f4858 52%,#223642);color:var(--cream)}
+  #nosotros .eyebrow{color:var(--pink)}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .about .big{font-family:var(--sans);font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.14;font-weight:600;letter-spacing:-.022em;color:var(--cream)}
+  .about .big em{font-style:normal;color:var(--rose)}
+  .about p.sub{color:rgba(253,248,243,.7);margin-top:22px;font-size:1.06rem}
+  .mv{display:flex;flex-direction:column;gap:16px}
+  .mv .card{border:1px solid rgba(253,248,243,.22);border-radius:6px;padding:24px 26px;transition:transform .4s,background .4s,color .4s,border-color .4s;background:transparent}
+  .mv .card:hover{transform:translateX(8px);background:var(--cream);border-color:var(--cream);color:var(--wine)}
+  .mv .card h3{font-size:1.55rem;margin-bottom:6px;color:var(--cream);transition:color .4s}
+  .mv .card:hover h3{color:var(--wine)}
+  .mv .card p{color:rgba(253,248,243,.62);font-size:.98rem;margin:0;transition:color .4s}
+  .mv .card:hover p{color:rgba(47,72,88,.78)}
+  @media(max-width:820px){.about{grid-template-columns:1fr;gap:40px}}
+
+  /* FÁBRICA — en crema, para alternar con Nosotros (vino) y Encuéntranos (vino) */
+  .fabrica{background:var(--paper);color:var(--ink)}
+  .fabrica .eyebrow{color:var(--rose)}
+  .fabrica h2{color:var(--ink)}
+  .fabrica h2 em{font-style:normal;color:var(--rose)}
+  .fabrica .lead{color:var(--ink-dim);max-width:58ch;margin:18px 0 56px;font-size:1.1rem}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stat{border-top:2px solid var(--rose);padding-top:22px}
+  .stat b{font-family:var(--display);font-weight:800;letter-spacing:-.05em;font-size:2.7rem;display:block;line-height:1;color:var(--wine)}
+  .stat span{font-size:.92rem;color:var(--ink-dim);margin-top:12px;display:block}
+  /* 30 AÑOS como declaración, no como dato de tabla */
+  .anios{display:flex;align-items:center;gap:26px;margin:8px 0 54px}
+  .anios b{font-family:var(--display);font-weight:800;font-size:clamp(4.5rem,13vw,11rem);line-height:.82;letter-spacing:-.06em;color:var(--rose)}
+  .anios span{font-family:var(--sans);font-weight:300;font-size:clamp(1rem,1.5vw,1.32rem);line-height:1.25;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.16em}
+  /* la cadena de producción */
+  .proceso{display:flex;flex-wrap:wrap;align-items:center;margin-bottom:56px}
+  .proceso i{font-style:normal;font-family:var(--sans);font-weight:400;font-size:.88rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink);padding:8px 0;white-space:nowrap}
+  .proceso i:not(:last-child)::after{content:"→";margin:0 16px;color:var(--rose);font-size:1.05em}
+  /* el distintivo de planta */
+  .hito{border-left:3px solid var(--rose);padding:4px 0 4px 22px;margin:0 0 44px;max-width:62ch}
+  .hito-lbl{display:block;font-family:var(--sans);font-weight:500;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin-bottom:10px}
+  .hito p{font-family:var(--sans);font-weight:300;font-size:clamp(1.1rem,1.9vw,1.42rem);line-height:1.4;color:var(--ink);letter-spacing:-.012em}
+  .hito b{font-weight:600}
+  @media(max-width:720px){.hito{padding-left:16px;margin-bottom:32px}}
+  /* argumento para el comprador de mayoreo */
+  .capacidad{border-top:2px solid var(--rose);padding-top:30px;margin-bottom:52px}
+  .capacidad h3{font-family:var(--sans);font-weight:600;letter-spacing:-.02em;font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:20px;color:var(--ink)}
+  .capacidad ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:11px 34px}
+  .capacidad li{position:relative;padding-left:22px;color:var(--ink-dim);font-size:1rem}
+  .capacidad li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--rose)}
+  @media(max-width:720px){
+    .anios{gap:18px;margin-bottom:38px}
+    .anios span{font-size:.9rem;letter-spacing:.12em}
+    .proceso{margin-bottom:38px}
+    .proceso i{font-size:.75rem}
+    .proceso i:not(:last-child)::after{margin:0 9px}
+    .capacidad ul{grid-template-columns:1fr;gap:9px}
+    .capacidad{margin-bottom:36px}
+  }
+  .fabrica .fab-cta{margin-top:0}
+  .fabrica .fab-cta .btn{border-color:var(--wine);color:var(--wine)}
+  .fabrica .fab-cta .btn:hover{background:var(--wine)}
+  .fabrica .fab-cta .btn:hover span{color:var(--pink)}
+  @media(max-width:820px){.stats{grid-template-columns:1fr 1fr;gap:28px}}
+
+  /* COLECCION teaser */
+  .col-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:44px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:820px){.grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+  @media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}}
+  .card-p{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:box-shadow .35s;transform-style:preserve-3d;will-change:transform}
+  .card-p:hover{box-shadow:0 30px 60px -30px rgba(47,72,88,.34)}
+  .card-p .img{aspect-ratio:1;background:#faf6f4;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .card-p .img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .card-p:hover .img img{transform:scale(1.05)}
+  .card-p .b{padding:20px 22px 24px}
+  .card-p h3{font-size:1.5rem;margin:6px 0 4px}
+  .card-p .price{color:var(--ink-dim);font-size:.95rem}
+
+  .retail{background:radial-gradient(rgba(242,196,210,.06) 1.1px,transparent 1.1px) 0 0/24px 24px,radial-gradient(120% 130% at 15% 95%,#3f6478,#2f4858 52%,#1f313c);color:var(--cream);text-align:center}
+  .retail .eyebrow{color:var(--pink);display:block;margin-bottom:12px}
+  .retail p{color:rgba(253,248,243,.72);margin:12px 0 40px}
+  .stores{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+  .store{font-family:var(--sans);font-weight:400;letter-spacing:.05em;padding:16px 28px;border:1px solid rgba(253,248,243,.25);border-radius:3px;color:var(--cream);font-size:1rem;transition:all .25s}
+  .store:hover{background:var(--cream);color:var(--wine);transform:translateY(-4px)}
+
+  .cta{background:var(--paper);text-align:center}
+  .cta .eyebrow{display:block;margin-bottom:14px}
+  .cta h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:18px}
+  .cta h2 em{font-style:normal;color:var(--wine)}
+  .cta p{color:var(--ink-dim);max-width:46ch;margin:0 auto 34px;font-size:1.1rem}
+  .cta .hero-cta{justify-content:center;opacity:1;animation:none}
+  .cta .contact-line{margin-top:32px;font-size:.92rem;letter-spacing:.05em;color:var(--ink-dim)}
+  .cta .contact-line a{color:var(--wine);border-bottom:1px solid var(--rose)}
+
+  footer{background:#223642;color:rgba(253,248,243,.7);padding:48px 0}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .social{display:flex;gap:10px}
+  .social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.26);display:grid;place-items:center;color:var(--cream);transition:background .25s,color .25s,border-color .25s}
+  .social a:hover{background:var(--cream);color:var(--wine);border-color:var(--cream)}
+  .foot .logo{color:var(--cream)}
+  .foot small{font-size:.82rem}
+  .fab{position:fixed;right:22px;bottom:22px;z-index:70;display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:#fff;padding:14px 20px;border-radius:100px;font-family:var(--sans);font-weight:500;font-size:.85rem;letter-spacing:.03em;box-shadow:0 14px 34px -8px rgba(37,211,102,.55);transition:transform .2s,opacity .3s;cursor:none}
+  .fab:hover{transform:translateY(-3px)}
+  body.menu-open .fab{opacity:0;pointer-events:none}
+  @media(hover:none){.fab{cursor:pointer}}
+  @media(max-width:520px){.fab span{display:none}.fab{padding:15px;border-radius:50%}}
+
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .burger{display:block}
+  }
+  /* Un solo botón de WhatsApp a la vez: en escritorio el del menú,
+     en celular el flotante (donde el menú se colapsa en hamburguesa). */
+  @media(min-width:901px){.fab{display:none}}
+
+  @media(max-width:600px){
+    .wrap{padding:0 20px}
+    section{padding:72px 0}
+    /* HERO en celular: centrado y compacto */
+    header{min-height:86svh;padding-top:100px}
+    .hero{padding-bottom:30px}
+    .hero-eyebrow{margin-bottom:15px;font-size:.58rem;letter-spacing:.22em}
+    h1.hero-title{font-size:clamp(2.3rem,12vw,3.6rem);line-height:1.08;letter-spacing:-.05em}
+    .hero p.lead{font-size:.96rem;margin:20px auto 24px;max-width:32ch}
+    .velo{background:radial-gradient(92% 62% at 50% 44%,rgba(253,248,243,.72),rgba(253,248,243,.24))}
+    .hero-cta{gap:9px;flex-wrap:nowrap}
+    .hero-cta .btn{padding:13px 10px;font-size:.68rem;letter-spacing:.07em;flex:1;justify-content:center;text-align:center}
+    .marq span{font-size:1.05rem;padding:11px 16px}
+    .marq span::after{margin-left:16px}
+    .about{gap:30px}
+    .about .big{font-size:1.7rem}
+    .mv .card{padding:20px}
+    .fabrica .lead{margin:16px 0 34px;font-size:1.02rem}
+    .stat b{font-size:2.3rem}
+    .fabrica .fab-cta{margin-top:38px}
+    h2.sec-title{font-size:clamp(2rem,7vw,2.6rem)}
+    .col-head{margin-bottom:28px}
+    .card-p .b{padding:12px 13px 15px}
+    .card-p h3{font-size:1.05rem;margin:3px 0 2px}
+    .card-p .price{font-size:.82rem}
+    .cta h2{font-size:clamp(2rem,9vw,3rem)}
+    .nav-inner{padding:0 18px}
+    .logo{font-size:.86rem;letter-spacing:.26em}
+    .stores{gap:10px}
+    .store{padding:12px 18px;font-size:.9rem}
+    .mmenu a:not(.btn){font-size:1.85rem}
+  }
+  :focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.2s!important}.reveal{opacity:1;transform:none}body{cursor:auto}.cur,.cur-r{display:none}
+    .hero-eyebrow span,h1.hero-title .l>span,.hero p.lead,.hero-cta{transform:none!important;opacity:1!important}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ten Colours",
+  "description": "Marca mexicana de tenis urbanos, con 30 años fabricando calzado en León, Guanajuato. Venta por mayoreo.",
+  "url": "https://marianomunozcastro011-ui.github.io/Ten-colours/",
+  "logo": "https://raw.githubusercontent.com/marianomunozcastro011-ui/Ten-colours/main/favicon.png",
+  "image": "https://raw.githubusercontent.com/marianomunozcastro011-ui/Ten-colours/main/og-preview.jpg",
+  "foundingDate": "1996",
+  "email": "tencolours10@hotmail.com",
+  "telephone": "+52-477-139-0274",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "León",
+    "addressRegion": "Guanajuato",
+    "addressCountry": "MX"
+  },
+  "sameAs": ["https://www.instagram.com/tencolours10","https://www.tiktok.com/@tencoloursmx"],
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Product",
+      "name": "Tenis urbanos",
+      "category": "Calzado"
+    },
+    "businessFunction": "http://purl.org/goodrelations/v1#Sell",
+    "eligibleCustomerType": "http://purl.org/goodrelations/v1#Reseller"
+  }
+}
+</script>
+</head>
+<body>
+<div class="cur" id="cur"></div>
+<div class="cur-r" id="curR"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">Ten&nbsp;<b>Colours</b></a>
+    <div class="nav-links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="fabrica.html">Fábrica</a>
+      <a href="coleccion.html">Colección</a>
+      <a class="btn btn-wa" data-mag href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo"><span>Cotiza mayoreo</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</nav>
+
+<div class="mmenu" id="mmenu">
+  <a href="#nosotros">Nosotros</a>
+  <a href="fabrica.html">Fábrica</a>
+  <a href="coleccion.html">Colección</a>
+  <a href="#encuentranos">Encuéntranos</a>
+  <a class="btn btn-wa" href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo"><span>Cotiza mayoreo</span></a>
+  <div class="mcontact">tencolours10@hotmail.com<br><b>477 139 0274</b> · León, Gto.</div>
+</div>
+
+<main>
+<header id="top">
+  <!-- Para activar la foto de fondo: sube "hero-fondo.jpg" al repositorio
+       y borra los signos de comentario de la línea de abajo.
+  <div class="hero-bg"></div>
+  -->
+  <div class="velo" aria-hidden="true"></div>
+  <div class="wrap hero">
+    <div class="inner">
+      <div class="hero-eyebrow eyebrow"><span>30 años · Hecho en México</span></div>
+      <h1 class="hero-title">
+        <span class="l l1"><span>Ten <b class="cycle">Colours</b></span></span>
+      </h1>
+      <p class="lead">Marca mexicana con 30 años creando calzado con diseño, comodidad y carácter. No vendemos solo tenis: vendemos la forma en que quieres pisar el mundo.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" data-mag href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo"><span>Cotiza mayoreo</span></a>
+        <a class="btn btn-out" data-mag href="coleccion.html"><span>Ver colección</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="marq" aria-hidden="true">
+    <div class="t"><span>Diseño</span><span>Comodidad</span><span>Calidad</span><span>Hecho en México</span><span>Para cada paso</span><span>Diseño</span><span>Comodidad</span><span>Calidad</span><span>Hecho en México</span><span>Para cada paso</span></div>
+  </div>
+</header>
+
+<section id="coleccion">
+  <div class="wrap">
+    <div class="col-head">
+      <div class="reveal"><span class="eyebrow sec-eyebrow">Colección</span><h2 class="sec-title">Tus próximos favoritos.</h2><p class="sub-col">Nuevos modelos · Nuevos colores · Nueva temporada</p></div>
+      <a class="btn btn-out reveal" data-mag href="coleccion.html" style="border-color:var(--ink)"><span>Ver toda la colección →</span></a>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="colores reveal">
+      <span class="col-lbl">Busca por color</span>
+      <div class="col-row">
+        <a href="coleccion.html?color=negro"><i style="background:#1a1714"></i>Negros <b>8</b></a>
+        <a href="coleccion.html?color=blanco"><i style="background:#fdf8f3;border:1px solid rgba(47,72,88,.22)"></i>Blancos <b>6</b></a>
+        <a href="coleccion.html?color=rosa"><i style="background:#d9a3a8"></i>Rosas <b>9</b></a>
+        <a href="coleccion.html?color=beige"><i style="background:#c9a882"></i>Beige y café <b>8</b></a>
+        <a href="coleccion.html?color=gris"><i style="background:#9a978c"></i>Grises <b>4</b></a>
+        <a href="coleccion.html?color=color"><i style="background:linear-gradient(135deg,#f2c4d2,#7fa8c2)"></i>A color <b>3</b></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap about">
+    <div class="reveal">
+      <span class="eyebrow sec-eyebrow">Por qué Ten Colours</span>
+      <p class="big">Hechos en León. <em>Hechos para moverte.</em></p>
+      <p class="sub">30 años haciendo calzado nos enseñaron algo: un buen tenis no solo debe verse bien. Tiene que acompañarte todo el día.</p>
+    </div>
+    <div class="mv reveal">
+      <div class="card" data-tilt><h3>Diseño mexicano</h3><p>Modelos desarrollados al ritmo de las tendencias y de quien los va a usar.</p></div>
+      <div class="card" data-tilt><h3>Producción propia</h3><p>Controlamos el proceso completo, del textil a la suela. Nadie más lo toca.</p></div>
+      <div class="card" data-tilt><h3>Color</h3><p>Porque un outfit cambia por completo con el par correcto. De ahí el nombre.</p></div>
+      <div class="card" data-tilt><h3>30 años</h3><p>Tres décadas de oficio fabricando calzado en León, Guanajuato.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="fabrica" class="fabrica">
+  <div class="wrap">
+    <span class="eyebrow reveal sec-eyebrow">Nuestra fábrica</span>
+    <h2 class="sec-title reveal">No solo diseñamos tenis. <em>Los hacemos.</em></h2>
+    <p class="lead reveal">Desde León, Guanajuato, controlamos el proceso de principio a fin. Eso nos hace competitivos en precio y nos permite responder rápido cuando un cliente crece.</p>
+
+    <div class="anios reveal">
+      <b data-count="30">30</b>
+      <span>años<br>haciéndolo<br>en México</span>
+    </div>
+
+    <div class="proceso reveal">
+      <i>Diseño</i><i>Textil</i><i>Corte láser</i><i>Corte robotizado</i><i>Costura</i><i>Suela</i><i>Montado</i><i>Calidad</i>
+    </div>
+
+    <div class="hito reveal">
+      <span class="hito-lbl">Lo que nos distingue</span>
+      <p>Somos la única fábrica de calzado en México con parte de su producción <b>robotizada</b>, y seguimos automatizando procesos año con año.</p>
+    </div>
+
+    <div class="capacidad reveal">
+      <h3>Una fábrica lista para crecer contigo.</h3>
+      <ul>
+        <li>Producción propia en León, Guanajuato</li>
+        <li>Desarrollo de producto en casa</li>
+        <li>Fabricación de textiles y suelas</li>
+        <li>Corte láser y corte robotizado — únicos en México</li>
+        <li>Control de calidad en cada lote</li>
+        <li>Capacidad para atender grandes volúmenes</li>
+      </ul>
+    </div>
+
+    <div class="fab-cta reveal">
+      <a class="btn btn-out" data-mag href="fabrica.html"><span>Conoce la fábrica por dentro →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="retail" id="encuentranos">
+  <div class="wrap">
+    <span class="eyebrow reveal">Encuéntranos en</span>
+    <h2 class="sec-title reveal">Nos venden las mejores tiendas de México.</h2>
+    <p class="reveal">Con envíos a toda la República. Estamos donde tus clientes ya compran.</p>
+    <div class="stores reveal">
+      <span class="store" data-mag>Mercado Libre</span><span class="store" data-mag>Amazon</span><span class="store" data-mag>Coppel</span><span class="store" data-mag>Liverpool</span><span class="store" data-mag>Sanborns</span><span class="store" data-mag>Calzzapato</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="wrap">
+    <span class="eyebrow reveal">Para mayoristas y distribuidores</span>
+    <h2 class="reveal">Fabricamos nosotros. <em>Tú solo vendes.</em></h2>
+    <p class="reveal">Ten Colours está lista para la siguiente etapa: 30 años de experiencia, producción propia y capacidad para crecer contigo.</p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-wa" data-mag href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo"><span>WhatsApp: 477 139 0274</span></a>
+      <a class="btn btn-out" data-mag style="border-color:var(--wine);color:var(--wine)" href="https://www.instagram.com/tencolours10" target="_blank" rel="noopener"><span>Instagram</span></a>
+      <a class="btn btn-out" data-mag style="border-color:var(--wine);color:var(--wine)" href="https://www.tiktok.com/@tencoloursmx" target="_blank" rel="noopener"><span>TikTok</span></a>
+    </div>
+    <p class="contact-line reveal">tencolours10@hotmail.com · León, Guanajuato · México</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="logo">Ten&nbsp;<b>Colours</b></a>
+    <div class="social"><a href="https://www.instagram.com/tencolours10" target="_blank" rel="noopener" aria-label="Instagram en Ten Colours"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.tiktok.com/@tencoloursmx" target="_blank" rel="noopener" aria-label="TikTok de Ten Colours"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 1 1 .77-5.06V9.7a5.68 5.68 0 0 0-.77-.05A5.66 5.66 0 1 0 15.54 15.3V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.29 4.29 0 0 1-3.24-1.48z"/></svg></a></div>
+    <small>Tenis urbanos · Hecho en México · © 2026 Ten Colours</small>
+  </div>
+</footer>
+
+<a class="fab" data-mag href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo" aria-label="Cotiza por WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6 8.9c0 1.7 1.2 3.3 1.4 3.5s2.4 3.7 5.9 5.1c2.1.8 2.5.7 2.9.6s1.4-.5 1.6-1.1.2-1 .1-1.1-.3-.2-.5-.3z"/></svg>
+  <span>Cotiza por WhatsApp</span>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
+
+/* menú móvil */
+(function(){
+  const b=document.getElementById('burger'), m=document.getElementById('mmenu');
+  function close(){document.body.classList.remove('menu-open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menú');}
+  b.addEventListener('click',()=>{
+    const open=document.body.classList.toggle('menu-open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+    b.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+  });
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+  addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+})();
+
+/* cursor */
+(function(){
+  if(matchMedia('(hover:none)').matches||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const c=document.getElementById('cur'),r=document.getElementById('curR');
+  let x=innerWidth/2,y=innerHeight/2,rx=x,ry=y;
+  addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;c.style.left=x+'px';c.style.top=y+'px';});
+  document.addEventListener('mouseover',e=>{if(e.target.closest('a,button,.store,.card-p,[data-mag]'))c.classList.add('big');});
+  document.addEventListener('mouseout',e=>{if(e.target.closest('a,button,.store,.card-p,[data-mag]'))c.classList.remove('big');});
+  (function loop(){rx+=(x-rx)*.16;ry+=(y-ry)*.16;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(loop);})();
+})();
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.14});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(el.parentElement.classList.contains('stats')||el.classList.contains('store')?(i%6)*0.06:0)+'s';io.observe(el);});
+
+/* count up */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target,end=+el.dataset.count,pre=el.dataset.pre||'',suf=el.dataset.suf||'';let t0=performance.now();(function t(n){const p=Math.min((n-t0)/1100,1),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=pre+v+suf;if(p<1)requestAnimationFrame(t);})(t0);cio.unobserve(el);}}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* magnetic + parallax + tilt (solo escritorio) */
+if(!matchMedia('(hover:none)').matches){
+  document.querySelectorAll('[data-mag]').forEach(el=>{
+    el.addEventListener('mousemove',e=>{const b=el.getBoundingClientRect();const mx=e.clientX-b.left-b.width/2,my=e.clientY-b.top-b.height/2;el.style.transform=`translate(${mx*.3}px,${my*.4}px)`;});
+    el.addEventListener('mouseleave',()=>el.style.transform='');
+  });
+  document.querySelectorAll('[data-tilt]').forEach(el=>{
+    el.addEventListener('mousemove',e=>{const b=el.getBoundingClientRect();const rx=((e.clientY-b.top)/b.height-.5)*-6,ry=((e.clientX-b.left)/b.width-.5)*6;el.style.transform=`perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateX(8px)`;});
+    el.addEventListener('mouseleave',()=>el.style.transform='');
+  });
+}
+
+/* modelos destacados (home) */
+const PRODUCTOS=[
+  {nombre:"Modelo 04",foto:"catalogo/m-04"},
+  {nombre:"Modelo 15",foto:"catalogo/m-15"},
+  {nombre:"Modelo 33",foto:"catalogo/m-33"},
+];
+document.getElementById('grid').innerHTML=PRODUCTOS.map(p=>{
+  const img=`<img src="${p.foto}.webp" onerror="this.onerror=null;this.src='${p.foto}.jpg'" alt="${p.nombre}" loading="lazy" decoding="async" width="620" height="620">`;
+  return `<article class="card-p"><div class="img">${img}</div><div class="b"><h3>${p.nombre}</h3><span class="price">Cotizar</span></div></article>`;
+}).join("");
+</script>
+</body>
+</html>
