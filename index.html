@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --borgo:#7a2a3d; --pine-d:#0b1a12;
+    --borgo:#7a2a3d;
     --wine:#1e4a54; --rose:#bd7880; --pink:#f2c4d2; --cream:#fdf8f3;
     --paper:#fdf8f3; --card:#fffdfb;
     --blue:#1e4a54; --blue-d:#14343c; --mustard:#bd7880; --sand:#f2c4d2; --bone:#fdf8f3;
@@ -62,7 +62,7 @@
   .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:0 32px;gap:16px}
   .nav-links{display:flex;gap:36px;align-items:center}
   .nav-links a:not(.btn){font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;position:relative;opacity:.75;transition:opacity .2s;white-space:nowrap}
-  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--pine);transition:right .3s}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--rose);transition:right .3s}
   .nav-links a:not(.btn):hover{opacity:1}
   .nav-links a:not(.btn):hover::after{right:0}
   .logo,.nav-links a:not(.btn){color:var(--ink);transition:color .4s}
@@ -70,7 +70,7 @@
   .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:100px;transition:background .3s,color .3s,transform .15s;cursor:none;border:1px solid transparent;will-change:transform}
   @media(hover:none){.btn{cursor:pointer}}
   .btn-solid{background:var(--borgo);color:var(--cream)}
-  .btn-solid:hover{background:#223642}
+  .btn-solid:hover{background:#5c1e2d}
   .btn-out{border-color:currentColor}
   .btn-out:hover{background:currentColor}
   .btn-out:hover span{color:var(--cream)}
@@ -101,8 +101,7 @@
   .mmenu .mcontact{position:absolute;bottom:44px;left:30px;font-size:.85rem;color:rgba(253,248,243,.55);line-height:1.8}
   .mmenu .mcontact b{color:var(--pink);font-weight:400}
 
-  /* HERO */
-  /* HERO — solo tipografía; el gráfico son las diez franjas de color */
+  /* HERO — tipografía sobre nubes */
   header{position:relative;background:url('hero-nubes.webp') center 62%/cover no-repeat,linear-gradient(170deg,#7cbee0,#f4b6c8);color:var(--ink);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:100svh;padding-top:132px}
   /* ===== FOTO DE FONDO (opcional) =====
      Cuando el cliente mande una foto de alguien usando los tenis, súbela
@@ -113,6 +112,12 @@
   /* velo que concentra oscuridad al centro para que el texto siempre gane */
   .velo{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(78% 66% at 50% 46%,rgba(253,248,243,.62),rgba(253,248,243,.12))}
 
+  /* banco de nubes al pie del hero: le da fondo y lo funde con la franja de abajo */
+  .nubes-frente{position:absolute;left:0;right:0;bottom:0;height:30%;z-index:1;pointer-events:none;
+    background:url('nubes-frente.webp') center bottom/cover no-repeat;
+    animation:deriva 30s ease-in-out infinite}
+  @keyframes deriva{0%,100%{transform:translateX(0) scale(1.05)}50%{transform:translateX(-2.4%) scale(1.09)}}
+  @media(max-width:600px){.nubes-frente{height:24%}}
   .hero{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding-bottom:56px;text-align:center}
   .hero .inner{max-width:1000px;margin:0 auto}
   .hero-eyebrow{color:#f7fbfd;text-shadow:0 1px 12px rgba(30,74,84,.35);margin-bottom:26px;overflow:hidden}
@@ -129,22 +134,7 @@
   @keyframes hue{0%,100%{opacity:1}50%{opacity:.86}}
   @keyframes up{to{transform:translateY(0)}}
   /* el tenis flotando sobre las nubes, montado sobre el título */
-  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2.4vw,1.85rem);color:#1e4a54;letter-spacing:-.015em;margin:0 auto 22px;text-align:center;position:relative;z-index:6}
-  /* nubes por DELANTE del tenis: es lo que le da la profundidad.
-     El tenis se hunde en ellas en vez de estar pegado encima. */
-  .nubes-frente{position:absolute;left:0;right:0;bottom:0;height:46%;z-index:5;pointer-events:none;
-    background:url('nubes-frente.webp') center bottom/cover no-repeat;
-    animation:deriva 26s ease-in-out infinite}
-  @keyframes deriva{0%,100%{transform:translateX(0) scale(1.04)}50%{transform:translateX(-2.2%) scale(1.07)}}
-  @media(max-width:600px){.nubes-frente{height:38%}}
-  .hero-tenis{display:block;width:min(48%,420px);height:auto;margin:-5% auto 4px;position:relative;z-index:4;
-    transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg);
-    filter:drop-shadow(0 34px 26px rgba(30,74,84,.34)) drop-shadow(0 10px 12px rgba(30,74,84,.2)) drop-shadow(0 2px 3px rgba(30,74,84,.16));
-    animation:flota 7s ease-in-out infinite;will-change:transform;
-    opacity:0;animation:flota 7s ease-in-out infinite,aparece 1s .5s forwards}
-  @keyframes flota{0%,100%{transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg) translateY(0)}50%{transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg) translateY(-15px)}}
-  @keyframes aparece{to{opacity:1}}
-  @media(max-width:600px){.hero-tenis{width:min(70%,280px);margin:-7% auto -3%}}
+  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.2rem,2.6vw,2rem);color:#1e4a54;letter-spacing:-.015em;margin:14px auto 30px;text-align:center;position:relative;z-index:6}
   .hero p.lead{font-size:1.16rem;color:#3b5b6b;max-width:52ch;margin:30px auto 34px;opacity:0;animation:fade 1s .6s forwards}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;z-index:6;opacity:0;animation:fade 1s .74s forwards}
   @keyframes fade{to{opacity:1}}
@@ -281,24 +271,7 @@
     .hero{padding-bottom:22px}
     .hero-eyebrow{margin-bottom:11px;font-size:.56rem;letter-spacing:.2em}
     h1.hero-title{font-size:clamp(2.1rem,11vw,3.2rem);line-height:1.06;letter-spacing:-.05em}
-    /* el tenis flotando sobre las nubes, montado sobre el título */
-  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2.4vw,1.85rem);color:#1e4a54;letter-spacing:-.015em;margin:0 auto 22px;text-align:center;position:relative;z-index:6}
-  /* nubes por DELANTE del tenis: es lo que le da la profundidad.
-     El tenis se hunde en ellas en vez de estar pegado encima. */
-  .nubes-frente{position:absolute;left:0;right:0;bottom:0;height:46%;z-index:5;pointer-events:none;
-    background:url('nubes-frente.webp') center bottom/cover no-repeat;
-    animation:deriva 26s ease-in-out infinite}
-  @keyframes deriva{0%,100%{transform:translateX(0) scale(1.04)}50%{transform:translateX(-2.2%) scale(1.07)}}
-  @media(max-width:600px){.nubes-frente{height:38%}}
-  .hero-tenis{display:block;width:min(48%,420px);height:auto;margin:-5% auto 4px;position:relative;z-index:4;
-    transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg);
-    filter:drop-shadow(0 34px 26px rgba(30,74,84,.34)) drop-shadow(0 10px 12px rgba(30,74,84,.2)) drop-shadow(0 2px 3px rgba(30,74,84,.16));
-    animation:flota 7s ease-in-out infinite;will-change:transform;
-    opacity:0;animation:flota 7s ease-in-out infinite,aparece 1s .5s forwards}
-  @keyframes flota{0%,100%{transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg) translateY(0)}50%{transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg) translateY(-15px)}}
-  @keyframes aparece{to{opacity:1}}
-  @media(max-width:600px){.hero-tenis{width:min(70%,280px);margin:-7% auto -3%}}
-  .hero p.lead{font-size:.96rem;margin:20px auto 24px;max-width:32ch}
+    .tagline{font-size:1.05rem;margin:10px auto 22px}
     .velo{background:radial-gradient(92% 62% at 50% 44%,rgba(253,248,243,.72),rgba(253,248,243,.24))}
     .hero-cta{gap:9px;flex-wrap:nowrap;margin-top:6px}
     .hero-cta .btn{padding:13px 10px;font-size:.68rem;letter-spacing:.07em;flex:1;justify-content:center;text-align:center}
@@ -379,7 +352,7 @@
   <a href="#nosotros">Nosotros</a>
   <a href="fabrica.html">Fábrica</a>
   <a href="coleccion.html">Colección</a>
-  <a href="#encuentranos">Encuéntranos</a>
+  <a href="#encuentranos">Clientes</a>
   <a class="btn btn-wa" href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo"><span>Cotiza mayoreo</span></a>
   <div class="mcontact">tencolours10@hotmail.com<br><b>477 139 0274</b> · León, Gto.</div>
 </div>
@@ -398,7 +371,6 @@
       <h1 class="hero-title">
         <span class="l l1"><span>Ten <b class="cycle">Colours</b></span></span>
       </h1>
-      <img class="hero-tenis" src="tenis-hero.webp" width="820" height="484" fetchpriority="high" alt="Tenis Ten Colours" />
       <p class="tagline">El color de tu paso.</p>
       <div class="hero-cta">
         <a class="btn btn-solid" data-mag href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo"><span>Cotiza mayoreo</span></a>
@@ -488,11 +460,11 @@
 
 <section class="retail" id="encuentranos">
   <div class="wrap">
-    <span class="eyebrow reveal">Encuéntranos en</span>
-    <h2 class="sec-title reveal">Nos venden las mejores tiendas de México.</h2>
-    <p class="reveal">Con envíos a toda la República. Estamos donde tus clientes ya compran.</p>
+    <span class="eyebrow reveal">Clientes</span>
+    <h2 class="sec-title reveal">Experiencia que nos respalda.</h2>
+    <p class="reveal">Trabajamos con marcas, grupos comerciales y cadenas de calzado en México.</p>
     <div class="stores reveal">
-      <span class="store" data-mag>Mercado Libre</span><span class="store" data-mag>Amazon</span><span class="store" data-mag>Coppel</span><span class="store" data-mag>Liverpool</span><span class="store" data-mag>Sanborns</span><span class="store" data-mag>Calzzapato</span>
+      <span class="store" data-mag>Cklass</span><span class="store" data-mag>Grupo Nazan</span><span class="store" data-mag>Coppel</span><span class="store" data-mag>Erez</span><span class="store" data-mag>Zapaterías México Encadenado</span><span class="store" data-mag>Grupo Comercial Bujaidar</span><span class="store" data-mag>Nuna Shoes</span><span class="store" data-mag>Zapaterías Aona</span><span class="store" data-mag>Zapaterías Vazza</span>
     </div>
   </div>
 </section>
