@@ -110,7 +110,7 @@
   .hero-bg{position:absolute;inset:0;z-index:0;background:url('hero-fondo.jpg') center/cover no-repeat}
   .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(95deg,rgba(38,4,15,.94) 0%,rgba(38,4,15,.78) 48%,rgba(38,4,15,.42) 100%)}
   /* velo que concentra oscuridad al centro para que el texto siempre gane */
-  .velo{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(78% 66% at 50% 46%,rgba(253,248,243,.62),rgba(253,248,243,.12))}
+  .velo{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(76% 62% at 50% 48%,rgba(253,248,243,.34),rgba(253,248,243,0))}
 
   /* banco de nubes al pie del hero: le da fondo y lo funde con la franja de abajo */
   .hero-zona{position:relative;flex:1;display:flex;overflow:hidden}
@@ -273,7 +273,7 @@
     .hero-eyebrow{margin-bottom:11px;font-size:.56rem;letter-spacing:.2em}
     h1.hero-title{font-size:clamp(2.1rem,11vw,3.2rem);line-height:1.06;letter-spacing:-.05em}
     .tagline{font-size:1.05rem;margin:10px auto 22px}
-    .velo{background:radial-gradient(92% 62% at 50% 44%,rgba(253,248,243,.72),rgba(253,248,243,.24))}
+    .velo{background:radial-gradient(92% 60% at 50% 46%,rgba(253,248,243,.42),rgba(253,248,243,0))}
     .hero-cta{gap:9px;flex-wrap:nowrap;margin-top:6px}
     .hero-cta .btn{padding:13px 10px;font-size:.68rem;letter-spacing:.07em;flex:1;justify-content:center;text-align:center}
     .marq span{font-size:1.05rem;padding:11px 16px}
@@ -364,8 +364,8 @@
        y borra los signos de comentario de la línea de abajo.
   <div class="hero-bg"></div>
   -->
-  <div class="hero-zona">
   <div class="velo" aria-hidden="true"></div>
+  <div class="hero-zona">
   <div class="nubes-frente" aria-hidden="true"></div>
   <div class="wrap hero">
     <div class="inner">
