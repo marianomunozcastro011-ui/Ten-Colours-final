@@ -113,11 +113,11 @@
   .velo{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(78% 66% at 50% 46%,rgba(253,248,243,.62),rgba(253,248,243,.12))}
 
   /* banco de nubes al pie del hero: le da fondo y lo funde con la franja de abajo */
-  .nubes-frente{position:absolute;left:0;right:0;bottom:0;height:30%;z-index:1;pointer-events:none;
+  .nubes-frente{position:absolute;left:0;right:0;bottom:54px;height:30%;z-index:1;pointer-events:none;
     background:url('nubes-frente.webp') center bottom/cover no-repeat;
     animation:deriva 30s ease-in-out infinite}
   @keyframes deriva{0%,100%{transform:translateX(0) scale(1.05)}50%{transform:translateX(-2.4%) scale(1.09)}}
-  @media(max-width:600px){.nubes-frente{height:24%}}
+  @media(max-width:600px){.nubes-frente{height:24%;bottom:44px}}
   .hero{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding-bottom:56px;text-align:center}
   .hero .inner{max-width:1000px;margin:0 auto}
   .hero-eyebrow{color:#f7fbfd;text-shadow:0 1px 12px rgba(30,74,84,.35);margin-bottom:26px;overflow:hidden}
@@ -140,7 +140,7 @@
   @keyframes fade{to{opacity:1}}
 
   /* franja de palabras: separa el hero del catálogo */
-  .marq{position:relative;background:#14343c;overflow:hidden;white-space:nowrap;display:flex}
+  .marq{position:relative;z-index:4;background:#14343c;overflow:hidden;white-space:nowrap;display:flex}
   .marq .t{display:flex;flex-shrink:0;animation:scrollx 30s linear infinite}
   .marq span{font-family:var(--sans);font-weight:400;text-transform:uppercase;letter-spacing:.14em;font-size:1.05rem;color:var(--sand);padding:15px 32px;opacity:.85}
   .marq span::after{content:"✳";margin-left:32px;color:var(--mustard);font-size:.7em;font-style:normal}
