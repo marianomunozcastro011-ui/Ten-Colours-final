@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marianomunozcastro011-ui.github.io/Ten-colours/sitemap.xml
+Sitemap: https://calzadotencolours.com/sitemap.xml

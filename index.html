@@ -8,13 +8,13 @@
 <meta property="og:title" content="Ten Colours — Tenis urbanos hechos en México" />
 <meta property="og:description" content="Marca mexicana de tenis urbanos. 30 años de calidad. Cotiza mayoreo por WhatsApp." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://raw.githubusercontent.com/marianomunozcastro011-ui/Ten-colours/main/og-preview.jpg" />
+<meta property="og:image" content="https://calzadotencolours.com/og-preview.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://raw.githubusercontent.com/marianomunozcastro011-ui/Ten-colours/main/og-preview.jpg" />
-<link rel="canonical" href="https://marianomunozcastro011-ui.github.io/Ten-colours/" />
-<meta property="og:url" content="https://marianomunozcastro011-ui.github.io/Ten-colours/" />
+<meta name="twitter:image" content="https://calzadotencolours.com/og-preview.jpg" />
+<link rel="canonical" href="https://calzadotencolours.com/" />
+<meta property="og:url" content="https://calzadotencolours.com/" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="icon" type="image/png" sizes="256x256" href="favicon.png" />
 <link rel="apple-touch-icon" href="favicon.png" />
@@ -23,12 +23,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --pine:#7fa8c2; --pine-d:#0b1a12;
-    --wine:#2f4858; --rose:#7fa8c2; --pink:#f2c4d2; --cream:#fdf8f3;
+    --borgo:#7a2a3d; --pine-d:#0b1a12;
+    --wine:#1e4a54; --rose:#bd7880; --pink:#f2c4d2; --cream:#fdf8f3;
     --paper:#fdf8f3; --card:#fffdfb;
-    --blue:#2f4858; --blue-d:#223642; --mustard:#7fa8c2; --sand:#f2c4d2; --bone:#fdf8f3;
-    --ink:#2f4858; --ink-dim:#5d7a8c;
-    --line:rgba(47,72,88,.12);
+    --blue:#1e4a54; --blue-d:#14343c; --mustard:#bd7880; --sand:#f2c4d2; --bone:#fdf8f3;
+    --ink:#1e4a54; --ink-dim:#5a7d85;
+    --line:rgba(30,74,84,.12);
     --wa:#25d366;
     --display:'Unbounded',system-ui,sans-serif; --sans:'Jost',system-ui,sans-serif;
     --maxw:1220px;
@@ -47,7 +47,7 @@
   /* cursor */
   .cur{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:var(--wine);z-index:200;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
   .cur-r{position:fixed;top:0;left:0;width:38px;height:38px;border-radius:50%;border:1px solid var(--rose);z-index:199;pointer-events:none;transform:translate(-50%,-50%)}
-  .cur.big{width:52px;height:52px;background:rgba(127,168,194,.18)}
+  .cur.big{width:52px;height:52px;background:rgba(189,120,128,.18)}
   @media(hover:none){.cur,.cur-r{display:none}}
 
   .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -69,7 +69,7 @@
   nav.scrolled .logo,nav.scrolled .nav-links a:not(.btn){color:var(--ink)}
   .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;border-radius:2px;transition:background .3s,color .3s,transform .15s;cursor:none;border:1px solid transparent;will-change:transform}
   @media(hover:none){.btn{cursor:pointer}}
-  .btn-solid{background:var(--wine);color:var(--cream)}
+  .btn-solid{background:var(--borgo);color:var(--cream)}
   .btn-solid:hover{background:#223642}
   .btn-out{border-color:currentColor}
   .btn-out:hover{background:currentColor}
@@ -88,7 +88,7 @@
   body.menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
   body.menu-open .burger i:nth-child(2){opacity:0}
   body.menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-  .mmenu{position:fixed;inset:0;z-index:90;background:radial-gradient(125% 100% at 22% 8%,#4d7690,#2f4858 52%,#223642);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;padding:0 30px;opacity:0;visibility:hidden;transform:translateY(-14px);transition:opacity .35s,transform .35s,visibility .35s}
+  .mmenu{position:fixed;inset:0;z-index:90;background:radial-gradient(125% 100% at 22% 8%,#37727f,#1e4a54 52%,#14343c);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;padding:0 30px;opacity:0;visibility:hidden;transform:translateY(-14px);transition:opacity .35s,transform .35s,visibility .35s}
   body.menu-open .mmenu{opacity:1;visibility:visible;transform:none}
   .mmenu a:not(.btn){font-family:var(--sans);font-weight:600;letter-spacing:-.02em;font-size:2.1rem;color:var(--cream);padding:9px 0;letter-spacing:-.01em;opacity:0;transform:translateY(14px);transition:opacity .4s,transform .4s}
   body.menu-open .mmenu a:not(.btn){opacity:1;transform:none}
@@ -115,10 +115,10 @@
 
   .hero{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;padding-bottom:56px;text-align:center}
   .hero .inner{max-width:1000px;margin:0 auto}
-  .hero-eyebrow{color:var(--ink);margin-bottom:26px;overflow:hidden}
+  .hero-eyebrow{color:#f7fbfd;text-shadow:0 1px 12px rgba(30,74,84,.35);margin-bottom:26px;overflow:hidden}
   .hero-eyebrow span{display:inline-block;transform:translateY(110%);animation:up .8s .1s cubic-bezier(.2,.8,.2,1) forwards}
   /* Unbounded solo para los golpes: el título del hero y los números. */
-  h1.hero-title{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,10.5vw,8.4rem);line-height:1.05;letter-spacing:-.055em;color:var(--ink)}
+  h1.hero-title{font-family:var(--display);font-weight:800;text-transform:none;font-size:clamp(2.8rem,10.5vw,8.4rem);line-height:1.05;letter-spacing:-.055em;color:#fff;text-shadow:0 2px 30px rgba(30,74,84,.18);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.28) 100%);mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.28) 100%)}
   .hero .cycle{font-style:normal;font-weight:inherit}
   h1.hero-title .l{overflow:hidden;display:block}
   h1.hero-title .l>span{display:block;transform:translateY(110%)}
@@ -126,14 +126,24 @@
   h1.hero-title .l2>span{animation:up .9s .34s cubic-bezier(.2,.8,.2,1) forwards, hue 6s linear infinite}
   h1.hero-title .l3>span{animation:up .9s .46s cubic-bezier(.2,.8,.2,1) forwards, hue 6s linear infinite}
   .cycle{font-style:normal}
-  @keyframes hue{0%,100%{color:#ffffff}33%{color:#fdf8f3}66%{color:#ffeef3}}
+  @keyframes hue{0%,100%{opacity:1}50%{opacity:.86}}
   @keyframes up{to{transform:translateY(0)}}
-  .hero p.lead{font-size:1.16rem;color:#456777;max-width:52ch;margin:30px auto 34px;opacity:0;animation:fade 1s .6s forwards}
+  /* el tenis flotando sobre las nubes, montado sobre el título */
+  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2.4vw,1.85rem);color:#1e4a54;letter-spacing:-.015em;margin:10px auto 0;text-align:center}
+  .hero-tenis{display:block;width:min(48%,410px);height:auto;margin:-9% auto -2%;position:relative;z-index:3;
+    transform:rotate(-8deg);
+    filter:drop-shadow(0 26px 30px rgba(30,74,84,.28)) drop-shadow(0 8px 10px rgba(30,74,84,.14));
+    animation:flota 7s ease-in-out infinite;will-change:transform;
+    opacity:0;animation:flota 7s ease-in-out infinite,aparece 1s .5s forwards}
+  @keyframes flota{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-8deg) translateY(-16px)}}
+  @keyframes aparece{to{opacity:1}}
+  @media(max-width:600px){.hero-tenis{width:min(70%,280px);margin:-7% auto -3%}}
+  .hero p.lead{font-size:1.16rem;color:#3b5b6b;max-width:52ch;margin:30px auto 34px;opacity:0;animation:fade 1s .6s forwards}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fade 1s .74s forwards}
   @keyframes fade{to{opacity:1}}
 
   /* franja de palabras: separa el hero del catálogo */
-  .marq{position:relative;background:#223642;overflow:hidden;white-space:nowrap;display:flex}
+  .marq{position:relative;background:#14343c;overflow:hidden;white-space:nowrap;display:flex}
   .marq .t{display:flex;flex-shrink:0;animation:scrollx 30s linear infinite}
   .marq span{font-family:var(--sans);font-weight:400;text-transform:uppercase;letter-spacing:.14em;font-size:1.05rem;color:var(--sand);padding:15px 32px;opacity:.85}
   .marq span::after{content:"✳";margin-left:32px;color:var(--mustard);font-size:.7em;font-style:normal}
@@ -145,11 +155,11 @@
   h2.sec-title{font-size:clamp(2.3rem,4.8vw,3.6rem)}
 
   /* NOSOTROS — en vino, para alternar con el catálogo (blanco) que va antes */
-  #nosotros{background:radial-gradient(rgba(242,196,210,.06) 1.1px,transparent 1.1px) 0 0/24px 24px,radial-gradient(120% 130% at 80% 8%,#4d7690,#2f4858 52%,#223642);color:var(--cream)}
+  #nosotros{background:radial-gradient(rgba(242,196,210,.06) 1.1px,transparent 1.1px) 0 0/24px 24px,radial-gradient(120% 130% at 80% 8%,#37727f,#1e4a54 52%,#14343c);color:var(--cream)}
   #nosotros .eyebrow{color:var(--pink)}
   .about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
   .about .big{font-family:var(--sans);font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.14;font-weight:600;letter-spacing:-.022em;color:var(--cream)}
-  .about .big em{font-style:normal;color:var(--rose)}
+  .about .big em{font-style:normal;color:var(--borgo)}
   .about p.sub{color:rgba(253,248,243,.7);margin-top:22px;font-size:1.06rem}
   .mv{display:flex;flex-direction:column;gap:16px}
   .mv .card{border:1px solid rgba(253,248,243,.22);border-radius:6px;padding:24px 26px;transition:transform .4s,background .4s,color .4s,border-color .4s;background:transparent}
@@ -157,14 +167,14 @@
   .mv .card h3{font-size:1.55rem;margin-bottom:6px;color:var(--cream);transition:color .4s}
   .mv .card:hover h3{color:var(--wine)}
   .mv .card p{color:rgba(253,248,243,.62);font-size:.98rem;margin:0;transition:color .4s}
-  .mv .card:hover p{color:rgba(47,72,88,.78)}
+  .mv .card:hover p{color:rgba(30,74,84,.78)}
   @media(max-width:820px){.about{grid-template-columns:1fr;gap:40px}}
 
   /* FÁBRICA — en crema, para alternar con Nosotros (vino) y Encuéntranos (vino) */
   .fabrica{background:var(--paper);color:var(--ink)}
   .fabrica .eyebrow{color:var(--rose)}
   .fabrica h2{color:var(--ink)}
-  .fabrica h2 em{font-style:normal;color:var(--rose)}
+  .fabrica h2 em{font-style:normal;color:var(--borgo)}
   .fabrica .lead{color:var(--ink-dim);max-width:58ch;margin:18px 0 56px;font-size:1.1rem}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .stat{border-top:2px solid var(--rose);padding-top:22px}
@@ -179,7 +189,7 @@
   .proceso i{font-style:normal;font-family:var(--sans);font-weight:400;font-size:.88rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink);padding:8px 0;white-space:nowrap}
   .proceso i:not(:last-child)::after{content:"→";margin:0 16px;color:var(--rose);font-size:1.05em}
   /* el distintivo de planta */
-  .hito{border-left:3px solid var(--rose);padding:4px 0 4px 22px;margin:0 0 44px;max-width:62ch}
+  .hito{border-left:3px solid var(--borgo);padding:4px 0 4px 22px;margin:0 0 44px;max-width:62ch}
   .hito-lbl{display:block;font-family:var(--sans);font-weight:500;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin-bottom:10px}
   .hito p{font-family:var(--sans);font-weight:300;font-size:clamp(1.1rem,1.9vw,1.42rem);line-height:1.4;color:var(--ink);letter-spacing:-.012em}
   .hito b{font-weight:600}
@@ -211,7 +221,7 @@
   @media(max-width:820px){.grid{grid-template-columns:repeat(3,1fr);gap:16px}}
   @media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}}
   .card-p{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:box-shadow .35s;transform-style:preserve-3d;will-change:transform}
-  .card-p:hover{box-shadow:0 30px 60px -30px rgba(47,72,88,.34)}
+  .card-p:hover{box-shadow:0 30px 60px -30px rgba(30,74,84,.34)}
   .card-p .img{aspect-ratio:1;background:#faf6f4;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .card-p .img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
   .card-p:hover .img img{transform:scale(1.05)}
@@ -219,7 +229,7 @@
   .card-p h3{font-size:1.5rem;margin:6px 0 4px}
   .card-p .price{color:var(--ink-dim);font-size:.95rem}
 
-  .retail{background:radial-gradient(rgba(242,196,210,.06) 1.1px,transparent 1.1px) 0 0/24px 24px,radial-gradient(120% 130% at 15% 95%,#3f6478,#2f4858 52%,#1f313c);color:var(--cream);text-align:center}
+  .retail{background:radial-gradient(rgba(242,196,210,.06) 1.1px,transparent 1.1px) 0 0/24px 24px,radial-gradient(120% 130% at 15% 95%,#2f6470,#1e4a54 52%,#123038);color:var(--cream);text-align:center}
   .retail .eyebrow{color:var(--pink);display:block;margin-bottom:12px}
   .retail p{color:rgba(253,248,243,.72);margin:12px 0 40px}
   .stores{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
@@ -229,13 +239,13 @@
   .cta{background:var(--paper);text-align:center}
   .cta .eyebrow{display:block;margin-bottom:14px}
   .cta h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:18px}
-  .cta h2 em{font-style:normal;color:var(--wine)}
+  .cta h2 em{font-style:normal;color:var(--borgo)}
   .cta p{color:var(--ink-dim);max-width:46ch;margin:0 auto 34px;font-size:1.1rem}
   .cta .hero-cta{justify-content:center;opacity:1;animation:none}
   .cta .contact-line{margin-top:32px;font-size:.92rem;letter-spacing:.05em;color:var(--ink-dim)}
   .cta .contact-line a{color:var(--wine);border-bottom:1px solid var(--rose)}
 
-  footer{background:#223642;color:rgba(253,248,243,.7);padding:48px 0}
+  footer{background:#14343c;color:rgba(253,248,243,.7);padding:48px 0}
   .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
   .social{display:flex;gap:10px}
   .social a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.26);display:grid;place-items:center;color:var(--cream);transition:background .25s,color .25s,border-color .25s}
@@ -259,14 +269,24 @@
   @media(max-width:600px){
     .wrap{padding:0 20px}
     section{padding:72px 0}
-    /* HERO en celular: centrado y compacto */
-    header{min-height:86svh;padding-top:100px}
-    .hero{padding-bottom:30px}
-    .hero-eyebrow{margin-bottom:15px;font-size:.58rem;letter-spacing:.22em}
-    h1.hero-title{font-size:clamp(2.3rem,12vw,3.6rem);line-height:1.08;letter-spacing:-.05em}
-    .hero p.lead{font-size:.96rem;margin:20px auto 24px;max-width:32ch}
+    /* HERO en celular: el tenis entra en la primera pantalla */
+    header{min-height:auto;padding-top:88px}
+    .hero{padding-bottom:22px}
+    .hero-eyebrow{margin-bottom:11px;font-size:.56rem;letter-spacing:.2em}
+    h1.hero-title{font-size:clamp(2.1rem,11vw,3.2rem);line-height:1.06;letter-spacing:-.05em}
+    /* el tenis flotando sobre las nubes, montado sobre el título */
+  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2.4vw,1.85rem);color:#1e4a54;letter-spacing:-.015em;margin:10px auto 0;text-align:center}
+  .hero-tenis{display:block;width:min(48%,410px);height:auto;margin:-9% auto -2%;position:relative;z-index:3;
+    transform:rotate(-8deg);
+    filter:drop-shadow(0 26px 30px rgba(30,74,84,.28)) drop-shadow(0 8px 10px rgba(30,74,84,.14));
+    animation:flota 7s ease-in-out infinite;will-change:transform;
+    opacity:0;animation:flota 7s ease-in-out infinite,aparece 1s .5s forwards}
+  @keyframes flota{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-8deg) translateY(-16px)}}
+  @keyframes aparece{to{opacity:1}}
+  @media(max-width:600px){.hero-tenis{width:min(70%,280px);margin:-7% auto -3%}}
+  .hero p.lead{font-size:.96rem;margin:20px auto 24px;max-width:32ch}
     .velo{background:radial-gradient(92% 62% at 50% 44%,rgba(253,248,243,.72),rgba(253,248,243,.24))}
-    .hero-cta{gap:9px;flex-wrap:nowrap}
+    .hero-cta{gap:9px;flex-wrap:nowrap;margin-top:6px}
     .hero-cta .btn{padding:13px 10px;font-size:.68rem;letter-spacing:.07em;flex:1;justify-content:center;text-align:center}
     .marq span{font-size:1.05rem;padding:11px 16px}
     .marq span::after{margin-left:16px}
@@ -298,9 +318,9 @@
   "@type": "Organization",
   "name": "Ten Colours",
   "description": "Marca mexicana de tenis urbanos, con 30 años fabricando calzado en León, Guanajuato. Venta por mayoreo.",
-  "url": "https://marianomunozcastro011-ui.github.io/Ten-colours/",
-  "logo": "https://raw.githubusercontent.com/marianomunozcastro011-ui/Ten-colours/main/favicon.png",
-  "image": "https://raw.githubusercontent.com/marianomunozcastro011-ui/Ten-colours/main/og-preview.jpg",
+  "url": "https://calzadotencolours.com/",
+  "logo": "https://calzadotencolours.com/favicon.png",
+  "image": "https://calzadotencolours.com/og-preview.jpg",
   "foundingDate": "1996",
   "email": "tencolours10@hotmail.com",
   "telephone": "+52-477-139-0274",
@@ -363,7 +383,8 @@
       <h1 class="hero-title">
         <span class="l l1"><span>Ten <b class="cycle">Colours</b></span></span>
       </h1>
-      <p class="lead">Marca mexicana con 30 años creando calzado con diseño, comodidad y carácter. No vendemos solo tenis: vendemos la forma en que quieres pisar el mundo.</p>
+      <p class="tagline">El color de tu paso.</p>
+      <img class="hero-tenis" src="tenis-hero.webp" width="820" height="674" fetchpriority="high" alt="Tenis Ten Colours" />
       <div class="hero-cta">
         <a class="btn btn-solid" data-mag href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo"><span>Cotiza mayoreo</span></a>
         <a class="btn btn-out" data-mag href="coleccion.html"><span>Ver colección</span></a>
@@ -386,7 +407,7 @@
       <span class="col-lbl">Busca por color</span>
       <div class="col-row">
         <a href="coleccion.html?color=negro"><i style="background:#1a1714"></i>Negros <b>8</b></a>
-        <a href="coleccion.html?color=blanco"><i style="background:#fdf8f3;border:1px solid rgba(47,72,88,.22)"></i>Blancos <b>6</b></a>
+        <a href="coleccion.html?color=blanco"><i style="background:#fdf8f3;border:1px solid rgba(30,74,84,.22)"></i>Blancos <b>6</b></a>
         <a href="coleccion.html?color=rosa"><i style="background:#d9a3a8"></i>Rosas <b>9</b></a>
         <a href="coleccion.html?color=beige"><i style="background:#c9a882"></i>Beige y café <b>8</b></a>
         <a href="coleccion.html?color=gris"><i style="background:#9a978c"></i>Grises <b>4</b></a>
