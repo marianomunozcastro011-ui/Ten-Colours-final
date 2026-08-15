@@ -67,7 +67,7 @@
   .nav-links a:not(.btn):hover::after{right:0}
   .logo,.nav-links a:not(.btn){color:var(--ink);transition:color .4s}
   nav.scrolled .logo,nav.scrolled .nav-links a:not(.btn){color:var(--ink)}
-  .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;border-radius:2px;transition:background .3s,color .3s,transform .15s;cursor:none;border:1px solid transparent;will-change:transform}
+  .btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:100px;transition:background .3s,color .3s,transform .15s;cursor:none;border:1px solid transparent;will-change:transform}
   @media(hover:none){.btn{cursor:pointer}}
   .btn-solid{background:var(--borgo);color:var(--cream)}
   .btn-solid:hover{background:#223642}
@@ -129,17 +129,24 @@
   @keyframes hue{0%,100%{opacity:1}50%{opacity:.86}}
   @keyframes up{to{transform:translateY(0)}}
   /* el tenis flotando sobre las nubes, montado sobre el título */
-  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2.4vw,1.85rem);color:#1e4a54;letter-spacing:-.015em;margin:10px auto 0;text-align:center}
-  .hero-tenis{display:block;width:min(48%,410px);height:auto;margin:-9% auto -2%;position:relative;z-index:3;
-    transform:rotate(-8deg);
-    filter:drop-shadow(0 26px 30px rgba(30,74,84,.28)) drop-shadow(0 8px 10px rgba(30,74,84,.14));
+  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2.4vw,1.85rem);color:#1e4a54;letter-spacing:-.015em;margin:0 auto 22px;text-align:center;position:relative;z-index:6}
+  /* nubes por DELANTE del tenis: es lo que le da la profundidad.
+     El tenis se hunde en ellas en vez de estar pegado encima. */
+  .nubes-frente{position:absolute;left:0;right:0;bottom:0;height:46%;z-index:5;pointer-events:none;
+    background:url('nubes-frente.webp') center bottom/cover no-repeat;
+    animation:deriva 26s ease-in-out infinite}
+  @keyframes deriva{0%,100%{transform:translateX(0) scale(1.04)}50%{transform:translateX(-2.2%) scale(1.07)}}
+  @media(max-width:600px){.nubes-frente{height:38%}}
+  .hero-tenis{display:block;width:min(48%,420px);height:auto;margin:-5% auto 4px;position:relative;z-index:4;
+    transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg);
+    filter:drop-shadow(0 34px 26px rgba(30,74,84,.34)) drop-shadow(0 10px 12px rgba(30,74,84,.2)) drop-shadow(0 2px 3px rgba(30,74,84,.16));
     animation:flota 7s ease-in-out infinite;will-change:transform;
     opacity:0;animation:flota 7s ease-in-out infinite,aparece 1s .5s forwards}
-  @keyframes flota{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-8deg) translateY(-16px)}}
+  @keyframes flota{0%,100%{transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg) translateY(0)}50%{transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg) translateY(-15px)}}
   @keyframes aparece{to{opacity:1}}
   @media(max-width:600px){.hero-tenis{width:min(70%,280px);margin:-7% auto -3%}}
   .hero p.lead{font-size:1.16rem;color:#3b5b6b;max-width:52ch;margin:30px auto 34px;opacity:0;animation:fade 1s .6s forwards}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fade 1s .74s forwards}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;z-index:6;opacity:0;animation:fade 1s .74s forwards}
   @keyframes fade{to{opacity:1}}
 
   /* franja de palabras: separa el hero del catálogo */
@@ -275,13 +282,20 @@
     .hero-eyebrow{margin-bottom:11px;font-size:.56rem;letter-spacing:.2em}
     h1.hero-title{font-size:clamp(2.1rem,11vw,3.2rem);line-height:1.06;letter-spacing:-.05em}
     /* el tenis flotando sobre las nubes, montado sobre el título */
-  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2.4vw,1.85rem);color:#1e4a54;letter-spacing:-.015em;margin:10px auto 0;text-align:center}
-  .hero-tenis{display:block;width:min(48%,410px);height:auto;margin:-9% auto -2%;position:relative;z-index:3;
-    transform:rotate(-8deg);
-    filter:drop-shadow(0 26px 30px rgba(30,74,84,.28)) drop-shadow(0 8px 10px rgba(30,74,84,.14));
+  .tagline{font-family:var(--sans);font-weight:300;font-size:clamp(1.15rem,2.4vw,1.85rem);color:#1e4a54;letter-spacing:-.015em;margin:0 auto 22px;text-align:center;position:relative;z-index:6}
+  /* nubes por DELANTE del tenis: es lo que le da la profundidad.
+     El tenis se hunde en ellas en vez de estar pegado encima. */
+  .nubes-frente{position:absolute;left:0;right:0;bottom:0;height:46%;z-index:5;pointer-events:none;
+    background:url('nubes-frente.webp') center bottom/cover no-repeat;
+    animation:deriva 26s ease-in-out infinite}
+  @keyframes deriva{0%,100%{transform:translateX(0) scale(1.04)}50%{transform:translateX(-2.2%) scale(1.07)}}
+  @media(max-width:600px){.nubes-frente{height:38%}}
+  .hero-tenis{display:block;width:min(48%,420px);height:auto;margin:-5% auto 4px;position:relative;z-index:4;
+    transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg);
+    filter:drop-shadow(0 34px 26px rgba(30,74,84,.34)) drop-shadow(0 10px 12px rgba(30,74,84,.2)) drop-shadow(0 2px 3px rgba(30,74,84,.16));
     animation:flota 7s ease-in-out infinite;will-change:transform;
     opacity:0;animation:flota 7s ease-in-out infinite,aparece 1s .5s forwards}
-  @keyframes flota{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-8deg) translateY(-16px)}}
+  @keyframes flota{0%,100%{transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg) translateY(0)}50%{transform:perspective(900px) rotateX(6deg) rotateY(-9deg) rotate(-7deg) translateY(-15px)}}
   @keyframes aparece{to{opacity:1}}
   @media(max-width:600px){.hero-tenis{width:min(70%,280px);margin:-7% auto -3%}}
   .hero p.lead{font-size:.96rem;margin:20px auto 24px;max-width:32ch}
@@ -377,14 +391,15 @@
   <div class="hero-bg"></div>
   -->
   <div class="velo" aria-hidden="true"></div>
+  <div class="nubes-frente" aria-hidden="true"></div>
   <div class="wrap hero">
     <div class="inner">
       <div class="hero-eyebrow eyebrow"><span>30 años · Hecho en México</span></div>
       <h1 class="hero-title">
         <span class="l l1"><span>Ten <b class="cycle">Colours</b></span></span>
       </h1>
+      <img class="hero-tenis" src="tenis-hero.webp" width="820" height="484" fetchpriority="high" alt="Tenis Ten Colours" />
       <p class="tagline">El color de tu paso.</p>
-      <img class="hero-tenis" src="tenis-hero.webp" width="820" height="674" fetchpriority="high" alt="Tenis Ten Colours" />
       <div class="hero-cta">
         <a class="btn btn-solid" data-mag href="https://wa.me/524771390274?text=Hola%20Ten%20Colours,%20me%20interesa%20cotizar%20mayoreo"><span>Cotiza mayoreo</span></a>
         <a class="btn btn-out" data-mag href="coleccion.html"><span>Ver colección</span></a>
