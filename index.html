@@ -106,11 +106,9 @@
 
   .hero-zona{position:relative;flex:1;display:flex;overflow:hidden}
   .hero{position:relative;z-index:2;flex:1;width:100%;display:grid;grid-template-columns:1.04fr 1fr;align-items:end;gap:28px;padding-bottom:0;text-align:left}
-  .hero-foto{align-self:end;justify-self:center;width:auto;height:auto;display:block;max-width:100%;max-height:calc(100svh - 200px);object-fit:contain;
-    filter:drop-shadow(0 26px 34px rgba(30,74,84,.16));
-    opacity:0;animation:sube 1.1s .18s cubic-bezier(.2,.8,.2,1) forwards}
-  @keyframes sube{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-  .hero .inner{max-width:640px;padding-bottom:13vh}
+  .hero-foto{position:absolute;left:25%;bottom:0;transform:translateX(-50%);z-index:1;width:auto;height:auto;max-width:46vw;max-height:calc(100svh - 200px);object-fit:contain;display:block;filter:drop-shadow(0 26px 34px rgba(30,74,84,.16));opacity:0;animation:sube 1.1s .18s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes sube{from{opacity:0;transform:translateX(-50%) translateY(28px)}to{opacity:1;transform:translateX(-50%)}}
+  .hero .inner{grid-column:2;max-width:640px;padding-bottom:13vh}
   .hero-eyebrow{color:var(--wine);opacity:.9;margin-bottom:18px;overflow:hidden}
   .hero-eyebrow span{display:inline-block;transform:translateY(110%);animation:up .8s .1s cubic-bezier(.2,.8,.2,1) forwards}
   /* Unbounded solo para los golpes: el título del hero y los números. */
@@ -252,8 +250,8 @@
   }
   /* tablet: menos foto, mas texto */
   @media(max-width:980px){
-    .hero{grid-template-columns:.9fr 1fr;gap:12px}
-    .hero-foto{max-height:calc(100svh - 230px)}
+    .hero{grid-template-columns:.86fr 1fr;gap:12px}
+    .hero-foto{left:24%;max-width:48vw;max-height:calc(100svh - 230px)}
     .hero .inner{padding-bottom:10vh}
   }
   /* Un solo botón de WhatsApp a la vez: en escritorio el del menú,
@@ -271,8 +269,8 @@
     .tagline{font-size:1.05rem}
     /* en celular se apilan: primero el texto, la foto abajo */
     .hero{grid-template-columns:1fr;align-items:start;gap:0;text-align:center;padding-bottom:0}
-    .hero .inner{order:1;padding-bottom:0;max-width:none}
-    .hero-foto{order:2;max-height:none;max-width:min(94%,420px);justify-self:center;margin-top:14px;filter:drop-shadow(0 14px 20px rgba(30,74,84,.14))}
+    .hero .inner{grid-column:auto;order:1;padding-bottom:0;max-width:none}
+    .hero-foto{position:static;transform:none;animation:none;opacity:1;order:2;max-height:none;max-width:min(94%,420px);justify-self:center;margin:14px auto 0;filter:drop-shadow(0 14px 20px rgba(30,74,84,.14))}
     .tagline{text-align:center;margin:10px 0 20px}
     .hero-cta{justify-content:center}
     header{background:
@@ -366,8 +364,8 @@
 <main>
 <header id="top">
   <div class="hero-zona">
+  <img class="hero-foto" src="modelo.webp" width="716" height="905" alt="Mujer sentada usando tenis Ten Colours en color rosa palo" fetchpriority="high" decoding="async">
   <div class="wrap hero">
-    <img class="hero-foto" src="modelo.webp" width="716" height="905" alt="Mujer sentada usando tenis Ten Colours en color rosa palo" fetchpriority="high" decoding="async">
     <div class="inner">
       <div class="hero-eyebrow eyebrow"><span>30 años · Hecho en México</span></div>
       <h1 class="hero-title">
