@@ -270,7 +270,13 @@
     /* en celular se apilan: primero el texto, la foto abajo */
     .hero{grid-template-columns:1fr;align-items:start;gap:0;text-align:center;padding-bottom:0}
     .hero .inner{grid-column:auto;order:1;padding-bottom:0;max-width:none}
-    .hero-foto{position:static;transform:none;animation:none;opacity:1;order:2;max-height:none;max-width:min(94%,420px);justify-self:center;margin:14px auto 0;filter:drop-shadow(0 14px 20px rgba(30,74,84,.14))}
+    /* la foto ya no es parte de la rejilla, asi que aqui se apila
+       con la caja del hero, que si la contiene */
+    .hero-zona{flex:0 0 auto;flex-direction:column;overflow:visible}
+    .hero{order:1}
+    .hero-foto{position:static;transform:none;animation:none;opacity:1;order:2;
+      align-self:center;width:min(94%,420px);max-width:none;height:auto;max-height:none;
+      margin:14px auto 0;filter:drop-shadow(0 14px 20px rgba(30,74,84,.14))}
     .tagline{text-align:center;margin:10px 0 20px}
     .hero-cta{justify-content:center}
     header{background:
